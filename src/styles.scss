@@ -12,8 +12,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$gravity-rip-helper-primary: mat-palette($mat-indigo);
-$gravity-rip-helper-accent: mat-palette($mat-pink, A200, A100, A400);
+$gravity-rip-helper-primary: mat-palette($mat-purple);
+$gravity-rip-helper-accent: mat-palette($mat-teal, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $gravity-rip-helper-warn: mat-palette($mat-red);

@@ -1,23 +1,25 @@
-<div cdkDropList class="example-list" [cdkDropListData]="first_col" #first="cdkDropList" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[second,third,fourth]">
-  <div class="example-box" *ngFor="let racer of first_col" cdkDrag>
-    <small class="position">{{ indexOf(racer) }}</small> <span class="name">{{racer}}</span>
+<div class="sheet">
+  <div cdkDropList class="list" [cdkDropListData]="first_col" #first="cdkDropList" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[second,third,fourth]">
+    <div class="box" *ngFor="let racer of first_col" cdkDrag>
+      <small class="position">{{ indexOf(racer) }}</small> <span class="name">{{racer}}</span>
+    </div>
   </div>
-</div>
-
-<div cdkDropList class="example-list" [cdkDropListData]="second_col" #second="cdkDropList" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[first,third,fourth]">
-  <div class="example-box" *ngFor="let racer of second_col" cdkDrag>
-    <small class="position">{{ indexOf(racer) }}</small> <span class="name">{{racer}}</span>
+  
+  <div cdkDropList class="list" [cdkDropListData]="second_col" #second="cdkDropList" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[first,third,fourth]">
+    <div class="box" *ngFor="let racer of second_col" cdkDrag>
+      <small class="position">{{ indexOf(racer) }}</small> <span class="name">{{racer}}</span>
+    </div>
   </div>
-</div>
-
-<div cdkDropList class="example-list" [cdkDropListData]="third_col" #third="cdkDropList" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[second,first,fourth]">
-  <div class="example-box" *ngFor="let racer of third_col" cdkDrag>
-    <small class="position">{{ indexOf(racer) }}</small> <span class="name">{{racer}}</span>
+  
+  <div cdkDropList class="list" [cdkDropListData]="third_col" #third="cdkDropList" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[second,first,fourth]">
+    <div class="box" *ngFor="let racer of third_col" cdkDrag>
+      <small class="position">{{ indexOf(racer) }}</small> <span class="name">{{racer}}</span>
+    </div>
   </div>
-</div>
-
-<div cdkDropList class="example-list" [cdkDropListData]="fourth_col" #fourth="cdkDropList" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[second,third,first]">
-  <div class="example-box" *ngFor="let racer of fourth_col" cdkDrag>
-    <small class="position">{{ indexOf(racer) }}</small> <span class="name">{{racer}}</span>
+  
+  <div cdkDropList class="list" [cdkDropListData]="fourth_col" #fourth="cdkDropList" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[second,third,first]">
+    <div class="box" *ngFor="let racer of fourth_col" cdkDrag>
+      <small class="position">{{ indexOf(racer) }}</small> <span class="name">{{racer}}</span>
+    </div>
   </div>
 </div>
