@@ -16,9 +16,8 @@
   }
 }
 
-
 .box {
-  width: 15vw;
+  min-width: 12vw;
   height: 15vh;
   padding: 10px;
   border-bottom: solid 1px #ccc;
@@ -30,6 +29,14 @@
   cursor: move;
   background: white;
   font-size: 14px;
+
+  @media screen and (max-width: 650px) {
+    min-width: 23vw;
+  }
+
+  @media screen and (min-width: 650px) {
+    width: 25%;
+  }
 }
 
 .cdk-drag-preview {
@@ -58,6 +65,5 @@
 
 .name {
   font-size: 1.2em;
-  display: inline-block;
   float: right;
 }

@@ -25,7 +25,9 @@ export class AvatarSelectorComponent implements OnInit {
     'Diana.png',
     'Erik.png',
     'Cole.png',
-    'Bluebear.png'
+    'Bluebear.png',
+    'Audie.png',
+    'Ankha.png'
   ]);
 
   constructor() { }

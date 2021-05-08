@@ -44,8 +44,8 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: #e4e4e499;
-  display: grid;
-  place-items: center;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 .rules-dialog {

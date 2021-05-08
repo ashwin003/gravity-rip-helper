@@ -1,6 +1,9 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
 import { MatDialog } from "@angular/material/dialog";
 import { RulesComponent } from './rules/rules.component';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +13,13 @@ import { RulesComponent } from './rules/rules.component';
 export class AppComponent {
   title = 'gravity-rip-helper';
 
-  constructor(public dialog: MatDialog) {
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
+
+  constructor(public dialog: MatDialog, private breakpointObserver: BreakpointObserver) {
   }
 
   openDialog() {

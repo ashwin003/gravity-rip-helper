@@ -1,22 +1,30 @@
-<mat-toolbar color="primary">
-  <span class="title">Rules</span>
-</mat-toolbar>
 <div class="content">
   <mat-tab-group color="accent">
-    <mat-tab label="Helicam"> 
+    <mat-tab label="Helicam">
       <ng-template matTabContent>
         <div class="tab-content">
           <app-rule-table [rules]="helicam_rules"></app-rule-table>
+
           <h3>Overclock</h3>
-          <p>Unlocks on the second lap. Sacrifice integrity points to add additional points to the roll</p>
+          <p>
+            Unlocks on the second lap. Sacrifice integrity points to add
+            additional points to the roll
+          </p>
           <p>Must be decided before the player rolls</p>
         </div>
       </ng-template>
     </mat-tab>
-    <mat-tab label="Maneuver"> 
+    <mat-tab label="Maneuver">
       <ng-template matTabContent>
         <div class="tab-content">
           <app-rule-table [rules]="maneuver_rules"></app-rule-table>
+
+          <h3>Overclock</h3>
+          <p>
+            Unlocks on the second lap. Sacrifice integrity points to add
+            additional points to the roll
+          </p>
+          <p>Must be decided before the player rolls</p>
         </div>
       </ng-template>
     </mat-tab>
