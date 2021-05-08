@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { Racer } from '../models/racer';
 
 @Component({
   selector: 'app-race',
@@ -8,30 +9,30 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 })
 export class RaceComponent implements OnInit {
 
-  racers = [
-    'Domninus',
-    'Nicole',
-    'Pryce',
-    'Albinus',
-    'Ritva',
+  racers: Racer[] = [
+    { name: 'Domninus' },
+    { name: 'Nicole' },
+    { name: 'Pryce' },
+    { name: 'Albinus' },
+    { name: 'Ritva' },
 
-    'Mercurius',
-    'Mina',
-    'Alinafe',
-    'Fatin',
-    'Esra',
+    { name: 'Mercurius' },
+    { name: 'Mina' },
+    { name: 'Alinafe' },
+    { name: 'Fatin' },
+    { name: 'Esra' },
 
-    'Fabiana Cai',
-    'Mitzi',
-    'Ignat',
-    'Val Emílie',
-    'Sitti Sofie',
+    { name: 'Fabiana Cai' },
+    { name: 'Mitzi' },
+    { name: 'Ignat' },
+    { name: 'Val Emílie' },
+    { name: 'Sitti Sofie' },
     
-    'Dieuwer',
-    'Guðbrandr',
-    'Kari Agafya',
-    'Barry',
-    'Shirin Wiktoria',
+    { name: 'Dieuwer' },
+    { name: 'Guðbrandr' },
+    { name: 'Kari Agafya' },
+    { name: 'Barry' },
+    { name: 'Shirin Wiktoria' },
   ];
 
   constructor() { }
@@ -62,10 +63,10 @@ export class RaceComponent implements OnInit {
   }
 
   public indexOf(element: any): number {
-    return this.racers.findIndex(v => v === element) + 1;
+    return this.racers.findIndex(v => v.name === element.name) + 1;
   }
 
-  public drop(event: CdkDragDrop<string[]>) {
+  public drop(event: CdkDragDrop<Racer[]>) {
     const previousContainerId = this.getIndexFromId(event.previousContainer.id);
     const containerId = this.getIndexFromId(event.container.id);
 

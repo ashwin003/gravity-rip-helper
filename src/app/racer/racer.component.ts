@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Racer } from '../models/racer';
 
 @Component({
   selector: 'app-racer',
@@ -9,7 +10,7 @@ export class RacerComponent implements OnInit {
 
   @Input() position: number = 0;
 
-  @Input() name: String = '';
+  @Input() racer: Racer = { name: ''};
 
   constructor() { }
 
