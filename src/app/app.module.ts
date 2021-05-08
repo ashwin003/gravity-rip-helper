@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -18,6 +17,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { MatDividerModule } from '@angular/material/divider';
+import { HttpClientModule } from '@angular/common/http';
+import { AvatarModule } from 'ngx-avatar';
 import { RulesComponent } from './rules/rules.component';
 import { RaceComponent } from './race/race.component';
 import { RacerComponent } from './racer/racer.component';
@@ -33,8 +34,8 @@ import { RuleTableComponent } from './rule-table/rule-table.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     DragDropModule,
     LayoutModule,
     MatToolbarModule,
@@ -47,7 +48,8 @@ import { RuleTableComponent } from './rule-table/rule-table.component';
     MatDialogModule,
     MatTabsModule,
     MatTableModule,
-    MatDividerModule
+    MatDividerModule,
+    AvatarModule
   ],
   providers: [],
   entryComponents: [RulesComponent],

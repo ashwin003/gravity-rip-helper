@@ -1,4 +1,6 @@
 .racer {
+  position: relative;
+
   .position {
     display: inline-block;
     margin-right: 1em;
@@ -6,6 +8,13 @@
 
   .name {
     font-size: 1.2em;
-    float: right;
+  }
+
+  .avatar {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-43%);
+    vertical-align: middle;
   }
 }
