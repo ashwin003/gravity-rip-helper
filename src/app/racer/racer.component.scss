@@ -1,9 +1,14 @@
 .racer {
   position: relative;
+  display: grid;
+  place-items: center;
 
   .position {
     display: inline-block;
     margin-right: 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   .name {
@@ -11,11 +16,7 @@
   }
 
   .avatar {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-43%);
-    vertical-align: middle;
+    transform: scale(1.5);
     cursor: pointer;
   }
 }

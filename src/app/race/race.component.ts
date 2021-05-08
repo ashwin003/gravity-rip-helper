@@ -84,7 +84,7 @@ export class RaceComponent {
     const dialogRef = this.dialog.open(EditRacerComponent,{
       data: racer,
       id: 'edit-racer',
-      height: '60vh',
+      minHeight: '55vh',
       width: '80vw'
     });
 
