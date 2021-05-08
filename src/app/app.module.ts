@@ -6,18 +6,30 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { ShellComponent } from './shell/shell.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table';
+import { MatDividerModule } from '@angular/material/divider';
+import { RulesComponent } from './rules/rules.component';
+import { RaceComponent } from './race/race.component';
+import { RacerComponent } from './racer/racer.component';
+import { RuleTableComponent } from './rule-table/rule-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShellComponent
+    RulesComponent,
+    RaceComponent,
+    RacerComponent,
+    RuleTableComponent
   ],
   imports: [
     BrowserModule,
@@ -29,9 +41,16 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    MatTooltipModule,
+    MatDialogModule,
+    MatTabsModule,
+    MatTableModule,
+    MatDividerModule
   ],
   providers: [],
-  bootstrap: [ShellComponent]
+  entryComponents: [RulesComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
