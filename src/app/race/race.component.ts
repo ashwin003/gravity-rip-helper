@@ -84,13 +84,15 @@ export class RaceComponent {
     const dialogRef = this.dialog.open(EditRacerComponent,{
       data: racer,
       id: 'edit-racer',
-      height: '80vh',
+      height: '60vh',
       width: '80vw'
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      const index = this.indexOf(result) - 1;
-      this.racers[index] = result;
+      if(result) {
+        const index = this.indexOf(result) - 1;
+        this.racers[index] = result;
+      }
     });
   }
 

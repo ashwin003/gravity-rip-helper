@@ -19,7 +19,13 @@ export class AvatarSelectorComponent implements OnInit {
     'Drago.png',
     'Eloise.png',
     'Beardo.png',
-    'Kabuki.png'
+    'Kabuki.png',
+    'Daisy.png',
+    'Skye.png',
+    'Diana.png',
+    'Erik.png',
+    'Cole.png',
+    'Bluebear.png'
   ]);
 
   constructor() { }

@@ -12,10 +12,13 @@ import {
   styleUrls: ['./edit-racer.component.scss'],
 })
 export class EditRacerComponent implements OnInit {
+  originalAvatar: string;
   constructor(
     public dialogRef: MatDialogRef<EditRacerComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Racer
-  ) {}
+  ) {
+    this.originalAvatar = data.avatar;
+  }
 
   ngOnInit(): void {}
 
@@ -24,6 +27,7 @@ export class EditRacerComponent implements OnInit {
   }
 
   onCancel(): void {
+    this.data.avatar = this.originalAvatar;
     this.dialogRef.close();
   }
 }
