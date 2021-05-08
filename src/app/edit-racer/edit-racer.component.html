@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  <span class="title">{{ data.name }}</span>
+</mat-toolbar>
+<div class="content">
+  <app-avatar-selector [selected]="data.avatar" (avatarSelected)="handleAvatarSelection($event)"></app-avatar-selector>
+</div>
+<div class="footer">
+    <button mat-button (click)="onCancel()">Cancel</button>
+    <button mat-button color="primary" [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

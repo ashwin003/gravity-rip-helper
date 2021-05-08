@@ -3,6 +3,6 @@
 
   <span class="name"> {{ racer.name }} </span>
 
-  <ngx-avatar class="avatar" [name]="racer.name"></ngx-avatar>
+  <ngx-avatar class="avatar" [name]="racer.name" [src]="racer.avatar" (clickOnAvatar)="handleAvatarClick()"></ngx-avatar>
   
 </div>

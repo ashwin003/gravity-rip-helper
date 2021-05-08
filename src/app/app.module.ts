@@ -23,6 +23,8 @@ import { RulesComponent } from './rules/rules.component';
 import { RaceComponent } from './race/race.component';
 import { RacerComponent } from './racer/racer.component';
 import { RuleTableComponent } from './rule-table/rule-table.component';
+import { EditRacerComponent } from './edit-racer/edit-racer.component';
+import { AvatarSelectorComponent } from './avatar-selector/avatar-selector.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { RuleTableComponent } from './rule-table/rule-table.component';
     RulesComponent,
     RaceComponent,
     RacerComponent,
-    RuleTableComponent
+    RuleTableComponent,
+    EditRacerComponent,
+    AvatarSelectorComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,7 @@ import { RuleTableComponent } from './rule-table/rule-table.component';
     AvatarModule
   ],
   providers: [],
-  entryComponents: [RulesComponent],
+  entryComponents: [RulesComponent, EditRacerComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
