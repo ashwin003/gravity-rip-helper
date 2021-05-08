@@ -1,7 +1,6 @@
 <div class="avatar-selector-container">
     <em><small>Images can be swapped out on demand</small></em>
     <br /><br />
-    <figure *ngFor="let avatar of available_avatars" [class.selected]="isSelected(avatar)" (click)="select(avatar)">
-        <img [src]="avatar" />
-    </figure>
+    <app-avatar class="figure" [src]="avatar" *ngFor="let avatar of available_avatars" [class.selected]="isSelected(avatar)" (click)="select(avatar)">
+    </app-avatar>
 </div>

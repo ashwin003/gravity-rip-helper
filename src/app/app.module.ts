@@ -18,13 +18,13 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { MatDividerModule } from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
-import { AvatarModule } from 'ngx-avatar';
 import { RulesComponent } from './rules/rules.component';
 import { RaceComponent } from './race/race.component';
 import { RacerComponent } from './racer/racer.component';
 import { RuleTableComponent } from './rule-table/rule-table.component';
 import { EditRacerComponent } from './edit-racer/edit-racer.component';
 import { AvatarSelectorComponent } from './avatar-selector/avatar-selector.component';
+import { AvatarComponent } from './avatar/avatar.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,8 @@ import { AvatarSelectorComponent } from './avatar-selector/avatar-selector.compo
     RacerComponent,
     RuleTableComponent,
     EditRacerComponent,
-    AvatarSelectorComponent
+    AvatarSelectorComponent,
+    AvatarComponent
   ],
   imports: [
     BrowserModule,
@@ -52,8 +53,7 @@ import { AvatarSelectorComponent } from './avatar-selector/avatar-selector.compo
     MatDialogModule,
     MatTabsModule,
     MatTableModule,
-    MatDividerModule,
-    AvatarModule
+    MatDividerModule
   ],
   providers: [],
   entryComponents: [RulesComponent, EditRacerComponent],
