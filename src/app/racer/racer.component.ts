@@ -20,4 +20,8 @@ export class RacerComponent {
   handleAvatarClick() {
     this.editTriggered.emit(this.racer);
   }
+
+  public get tooltip() {
+    return !!this.racer.avatar ? '' : this.racer.name;
+  }
 }

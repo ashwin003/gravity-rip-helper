@@ -3,6 +3,7 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Racer } from '../models/racer';
 import { MatDialog } from '@angular/material/dialog';
 import { EditRacerComponent } from '../edit-racer/edit-racer.component';
+import { uniqueNamesGenerator, Config, names } from 'unique-names-generator';
 
 @Component({
   selector: 'app-race',
@@ -11,31 +12,7 @@ import { EditRacerComponent } from '../edit-racer/edit-racer.component';
 })
 export class RaceComponent {
 
-  racers: Racer[] = [
-    { id:1, name: 'Domninus', avatar: '' },
-    { id:2, name: 'Nicole', avatar: '' },
-    { id:3, name: 'Pryce', avatar: '' },
-    { id:4, name: 'Albinus', avatar: '' },
-    { id:5, name: 'Ritva', avatar: '' },
-
-    { id:6, name: 'Mercurius', avatar: '' },
-    { id:7, name: 'Mina', avatar: '' },
-    { id:8, name: 'Alinafe', avatar: '' },
-    { id:9, name: 'Fatin', avatar: '' },
-    { id:10, name: 'Esra', avatar: '' },
-
-    { id:11, name: 'Fabiana Cai', avatar: '' },
-    { id:12, name: 'Mitzi', avatar: '' },
-    { id:13, name: 'Ignat', avatar: '' },
-    { id:14, name: 'Val Emílie', avatar: '' },
-    { id:15, name: 'Sitti Sofie', avatar: '' },
-    
-    { id:16, name: 'Dieuwer', avatar: '' },
-    { id:17, name: 'Guðbrandr', avatar: '' },
-    { id:18, name: 'Kari Agafya', avatar: '' },
-    { id:19, name: 'Barry', avatar: '' },
-    { id:20, name: 'Shirin Wiktoria', avatar: '' },
-  ];
+  racers: Racer[] = [...Array(20).keys()].map(this.getRacer);
 
   constructor(public dialog: MatDialog) { }
 
@@ -106,6 +83,18 @@ export class RaceComponent {
     return containerId % 2 == 0
       ? containerId * factor + index
       : containerId * factor + factor - index - 1;
+  }
+
+  private getRacer(index: number): Racer {
+    const config: Config = {
+      dictionaries: [names]
+    };
+
+    return {
+      id: index,
+      name: uniqueNamesGenerator(config),
+      avatar: ''
+    };
   }
 
 }
