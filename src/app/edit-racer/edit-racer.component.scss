@@ -12,4 +12,10 @@
     .mat-button:not(:last-of-type) {
         margin-right: 1em;
     }
+
+    @media screen and (max-width: 500px) {
+        position: fixed;
+        width: 80vw;
+        background-color: white;
+    }
 }

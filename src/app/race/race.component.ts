@@ -62,6 +62,7 @@ export class RaceComponent {
       data: racer,
       id: 'edit-racer',
       minHeight: '55vh',
+      maxHeight: '95vh',
       width: '80vw'
     });
 

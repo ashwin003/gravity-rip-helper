@@ -2,10 +2,13 @@
     display: inline-block;
     width: 75px;
     height: 75px;
-    border-radius: 50%;
     border: 5px solid rgba(0, 0, 0, 0.87);
     margin-bottom: 1em;
     margin-right: 1em;
+
+    @media screen and (min-width: 500px) {
+        border-radius: 50%;
+    }
 
     &.selected {
         border-color: #BB1717;
