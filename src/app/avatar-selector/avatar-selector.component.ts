@@ -18,6 +18,7 @@ export class AvatarSelectorComponent implements OnInit {
     'Robin.png',
     'Drago.png',
     'Eloise.png',
+    'KKSlider.png',
     'Beardo.png',
     'Kabuki.png',
     'Daisy.png',
