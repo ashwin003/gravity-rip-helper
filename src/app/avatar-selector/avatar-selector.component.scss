@@ -1,20 +1,27 @@
-.figure {
-    display: inline-block;
-    width: 75px;
-    height: 75px;
-    border: 5px solid rgba(0, 0, 0, 0.87);
-    margin-bottom: 1em;
-    margin-right: 1em;
+$size: 5em;
 
-    @media screen and (min-width: 500px) {
-        border-radius: 50%;
-    }
-
-    &.selected {
-        border-color: #BB1717;
-    }
-
-    img {
-        height: 100%;
+.avatar-selector-container {
+    .figure {
+        display: inline-block;
+        width: $size;
+        height: $size;
+        border: 5px solid rgba(0, 0, 0, 0.87);
+        margin: 0;
+        margin-bottom: 0.5em;
+        margin-right: 0.5em;
+        box-sizing: border-box;
+        background-color: #b4e28a;
+    
+        @media screen and (min-width: 500px) {
+            border-radius: 50%;
+        }
+    
+        &.selected {
+            border-color: #BB1717;
+        }
+    
+        img {
+            height: 100%;
+        }
     }
 }

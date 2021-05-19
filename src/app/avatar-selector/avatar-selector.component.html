@@ -1,4 +1,5 @@
 <div class="avatar-selector-container">
-    <app-avatar class="figure" [src]="avatar" *ngFor="let avatar of available_avatars" [class.selected]="isSelected(avatar)" (click)="select(avatar)">
-    </app-avatar>
+    <figure class="figure" *ngFor="let avatar of available_avatars" [class.selected]="isSelected(avatar)" (click)="select(avatar)">
+        <img [src]="imageSource(avatar)" />
+    </figure>
 </div>

@@ -13,21 +13,24 @@ import {
 })
 export class EditRacerComponent implements OnInit {
   originalAvatar: string;
+  position: number;
+
   constructor(
     public dialogRef: MatDialogRef<EditRacerComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Racer
+    @Inject(MAT_DIALOG_DATA) public data: { racer: Racer; position: number }
   ) {
-    this.originalAvatar = data.avatar;
+    this.originalAvatar = data.racer.avatar;
+    this.position = data.position;
   }
 
   ngOnInit(): void {}
 
   handleAvatarSelection(selected: string) {
-    this.data.avatar = selected;
+    this.data.racer.avatar = selected;
   }
 
   onCancel(): void {
-    this.data.avatar = this.originalAvatar;
+    this.data.racer.avatar = this.originalAvatar;
     this.dialogRef.close();
   }
 }

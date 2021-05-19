@@ -8,13 +8,12 @@ import { uniqueNamesGenerator, Config, names } from 'unique-names-generator';
 @Component({
   selector: 'app-race',
   templateUrl: './race.component.html',
-  styleUrls: ['./race.component.scss']
+  styleUrls: ['./race.component.scss'],
 })
 export class RaceComponent {
-
   racers: Racer[] = [...Array(20).keys()].map(this.getRacer);
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) {}
 
   public get first_col() {
     return this.racers.slice(0, 5);
@@ -39,7 +38,7 @@ export class RaceComponent {
   }
 
   public indexOf(element: any): number {
-    return this.racers.findIndex(v => v.id === element.id) + 1;
+    return this.racers.findIndex((v) => v.id === element.id) + 1;
   }
 
   public drop(event: CdkDragDrop<Racer[]>) {
@@ -58,16 +57,19 @@ export class RaceComponent {
   }
 
   public editTriggered(racer: Racer) {
-    const dialogRef = this.dialog.open(EditRacerComponent,{
-      data: racer,
+    const instance = this;
+    const dialogRef = this.dialog.open(EditRacerComponent, {
+      data: {
+        racer,
+        position: instance.indexOf(racer),
+      },
       id: 'edit-racer',
-      minHeight: '55vh',
       maxHeight: '95vh',
-      width: '80vw'
+      width: '85vw',
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      if(result) {
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
         const index = this.indexOf(result) - 1;
         this.racers[index] = result;
       }
@@ -88,14 +90,13 @@ export class RaceComponent {
 
   private getRacer(index: number): Racer {
     const config: Config = {
-      dictionaries: [names]
+      dictionaries: [names],
     };
 
     return {
       id: index,
       name: uniqueNamesGenerator(config),
-      avatar: ''
+      avatar: '',
     };
   }
-
 }

@@ -14,7 +14,7 @@ export class AppComponent {
   title = 'gravity-rip-helper';
 
   isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe([Breakpoints.Handset, Breakpoints.TabletPortrait])
+    .observe([Breakpoints.Handset, Breakpoints.TabletPortrait, Breakpoints.WebPortrait])
     .pipe(
       map((result) => result.matches),
       shareReplay()

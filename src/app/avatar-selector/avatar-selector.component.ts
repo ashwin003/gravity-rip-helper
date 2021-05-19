@@ -48,4 +48,15 @@ export class AvatarSelectorComponent implements OnInit {
     this.avatarSelected.emit(avatar);
   }
 
+  public imageSource(avatar: string) {
+    return !!avatar ? avatar : this.generateAvatarUri(avatar);
+  }
+
+  private generateAvatarUri(avatar: string) {
+    return (
+      'https://ui-avatars.com/api/?size=128&background=random&name=' +
+      encodeURIComponent(avatar)
+    );
+  }
+
 }

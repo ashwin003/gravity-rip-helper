@@ -1,7 +1,12 @@
-<div class="content">
-  <app-avatar-selector [selected]="data.avatar" (avatarSelected)="handleAvatarSelection($event)"></app-avatar-selector>
-</div>
-<div class="footer">
-    <button mat-button (click)="onCancel()">Cancel</button>
-    <button mat-button color="primary" [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
-</div>
+<mat-toolbar color="primary" class="toolbar" mat-dialog-title>
+  <span class="title">
+    Racer {{ position }}
+  </span>
+</mat-toolbar>
+<mat-dialog-content class="content">
+  <app-avatar-selector [selected]="data.racer.avatar" (avatarSelected)="handleAvatarSelection($event)"></app-avatar-selector>
+</mat-dialog-content>
+<mat-dialog-actions align="end" class="actions">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="primary" [mat-dialog-close]="data.racer" cdkFocusInitial>Ok</button>
+</mat-dialog-actions>

@@ -1,21 +1,24 @@
-.content {
-    padding: 24px;
+.toolbar {
+    line-height: 1em;
+
+    .title {
+        display: inline-block;
+        margin-top: 1em;
+    }
 }
 
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 24px;
-    box-sizing: border-box;
 
-    .mat-button:not(:last-of-type) {
-        margin-right: 1em;
-    }
+.content,
+.actions {
+    margin: 0;
+}
 
-    @media screen and (max-width: 500px) {
-        position: fixed;
-        width: 80vw;
-        background-color: white;
-    }
+.content {
+    overflow-y: auto;
+    height: 100%;
+    padding: 0 12px;
+}
+
+.actions {
+    padding: 12px 24px;
 }
