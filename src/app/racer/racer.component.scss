@@ -19,5 +19,7 @@
 
   .avatar {
     cursor: pointer;
+    display: grid;
+    place-items: center;
   }
 }
