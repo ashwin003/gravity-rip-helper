@@ -1,7 +1,8 @@
 figure {
     display: inline-block;
-    width: 75px;
-    height: 75px;
+    height: 100%;
+    max-height: 12vh;
+    max-width: 25vw;
     margin: 0;
     text-align: center;
     overflow: hidden;

@@ -18,6 +18,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { MatDividerModule } from '@angular/material/divider';
 import { HttpClientModule } from '@angular/common/http';
+import { MatBadgeModule } from '@angular/material/badge';
 import { RulesComponent } from './rules/rules.component';
 import { RaceComponent } from './race/race.component';
 import { RacerComponent } from './racer/racer.component';
@@ -53,7 +54,8 @@ import { AvatarComponent } from './avatar/avatar.component';
     MatDialogModule,
     MatTabsModule,
     MatTableModule,
-    MatDividerModule
+    MatDividerModule,
+    MatBadgeModule
   ],
   providers: [],
   entryComponents: [RulesComponent, EditRacerComponent],

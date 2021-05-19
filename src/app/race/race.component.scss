@@ -8,7 +8,8 @@ $arrow-size: 5px;
   justify-content: center;
 
   .list {
-    max-width: 100%;
+    max-width: 25%;
+    width: 100%;
     border: solid 1px #ccc;
     min-height: 60px;
     display: inline-block;
@@ -19,7 +20,7 @@ $arrow-size: 5px;
 
     .box {
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 50%;
@@ -28,23 +29,23 @@ $arrow-size: 5px;
         width: $arrow-size;
         height: 100%;
       }
-    
+
       &:first-of-type {
         &:before {
           top: 50%;
         }
       }
-    
+
       &:last-of-type {
         &:before {
           height: 50%;
         }
       }
-      
+
       &:last-of-type,
       &:first-of-type {
         &:after {
-          content: '';
+          content: "";
           position: absolute;
           top: 50%;
           left: 50%;
@@ -86,8 +87,9 @@ $arrow-size: 5px;
 }
 
 .box {
-  min-width: 12vw;
-  height: 15vh;
+  max-height: 15vh;
+  height: 100%;
+  width: 100%;
   padding: 10px;
   border-bottom: solid 1px #ccc;
   color: rgba(0, 0, 0, 0.87);
@@ -99,15 +101,6 @@ $arrow-size: 5px;
   background: white;
   font-size: 14px;
   position: relative;
-
-  @media screen and (max-width: 650px) {
-    min-width: 23vw;
-    padding: 0;
-  }
-
-  @media screen and (min-width: 650px) {
-    width: 25%;
-  }
 }
 
 .cdk-drag-preview {

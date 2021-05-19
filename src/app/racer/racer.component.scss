@@ -3,19 +3,7 @@
   display: grid;
   place-items: center;
   z-index: 1;
-
-  .position {
-    display: inline-block;
-    margin-right: 1em;
-    font-weight: bold;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  .name {
-    font-size: 1.2em;
-  }
+  height: 100%;
 
   .avatar {
     cursor: pointer;
