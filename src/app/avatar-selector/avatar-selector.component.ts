@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AvatarService } from '../services/avatar.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { AvatarService } from '../services/avatar.service';
   templateUrl: './avatar-selector.component.html',
   styleUrls: ['./avatar-selector.component.scss']
 })
-export class AvatarSelectorComponent implements OnInit {
+export class AvatarSelectorComponent {
   @Input() selected: string = '';
 
   @Output() avatarSelected: EventEmitter<string> = new EventEmitter<string>();
@@ -33,9 +33,6 @@ export class AvatarSelectorComponent implements OnInit {
   ]);
 
   constructor(private avatarService: AvatarService) { }
-
-  ngOnInit(): void {
-  }
 
   isSelected(avatar: string) {
     return this.selected === avatar;

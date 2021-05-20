@@ -10,7 +10,7 @@ import {
   templateUrl: './edit-racer.component.html',
   styleUrls: ['./edit-racer.component.scss'],
 })
-export class EditRacerComponent implements OnInit {
+export class EditRacerComponent {
   originalAvatar: string;
   position: number;
 
@@ -21,8 +21,6 @@ export class EditRacerComponent implements OnInit {
     this.originalAvatar = data.racer.avatar;
     this.position = data.position;
   }
-
-  ngOnInit(): void {}
 
   handleAvatarSelection(selected: string) {
     this.data.racer.avatar = selected;

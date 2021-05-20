@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Rule } from '../models/rule';
 
 @Component({
@@ -6,7 +6,7 @@ import { Rule } from '../models/rule';
   templateUrl: './rules.component.html',
   styleUrls: ['./rules.component.scss']
 })
-export class RulesComponent implements OnInit {
+export class RulesComponent {
 
   helicam_rules: Rule[] = [
     {
@@ -85,8 +85,5 @@ export class RulesComponent implements OnInit {
     },
   ];
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

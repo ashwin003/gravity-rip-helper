@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AvatarService } from '../services/avatar.service';
 
 @Component({
@@ -6,14 +6,12 @@ import { AvatarService } from '../services/avatar.service';
   templateUrl: './avatar.component.html',
   styleUrls: ['./avatar.component.scss'],
 })
-export class AvatarComponent implements OnInit {
+export class AvatarComponent {
   @Input() src: string = '';
 
   @Input() name: string = '';
 
   constructor(private avatarService: AvatarService) {}
-
-  ngOnInit(): void {}
 
   public get imageSource() {
     return this.avatarService.get(this.src, this.name);
