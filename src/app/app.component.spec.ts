@@ -1,16 +1,37 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
 import { AppComponent } from './app.component';
+import { MatDialog } from '@angular/material/dialog';
+import { RulesComponent } from './rules/rules.component';
+import { RaceComponent } from './race/race.component';
+import { By } from '@angular/platform-browser';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        BrowserAnimationsModule,
+        DragDropModule,
+        MatToolbarModule,
+        MatTabsModule,
+        MatSidenavModule,
+        MatCardModule
       ],
       declarations: [
-        AppComponent
+        RulesComponent,
+        RaceComponent,
+        AppComponent,
       ],
+      providers: [
+        { provide: MatDialog, useValue: {} }
+      ]
     }).compileComponents();
   });
 
@@ -20,16 +41,12 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'gravity-rip-helper'`, () => {
+  it('should render the right components', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('gravity-rip-helper');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('gravity-rip-helper app is running!');
+    
+    const mainContainers = fixture.debugElement.queryAll(By.css('.main-container')).map((d) => d.children[0].name);
+    const expectedContainers = ["app-rules", "app-race"];
+    expect(mainContainers).toEqual(expectedContainers);
   });
 });

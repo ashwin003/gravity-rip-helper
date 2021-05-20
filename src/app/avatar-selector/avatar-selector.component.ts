@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AvatarService } from '../services/avatar.service';
 
 @Component({
   selector: 'app-avatar-selector',
@@ -31,7 +32,7 @@ export class AvatarSelectorComponent implements OnInit {
     'Ankha.png'
   ]);
 
-  constructor() { }
+  constructor(private avatarService: AvatarService) { }
 
   ngOnInit(): void {
   }
@@ -49,14 +50,6 @@ export class AvatarSelectorComponent implements OnInit {
   }
 
   public imageSource(avatar: string) {
-    return !!avatar ? avatar : this.generateAvatarUri(avatar);
+    return this.avatarService.get(avatar, avatar);
   }
-
-  private generateAvatarUri(avatar: string) {
-    return (
-      'https://ui-avatars.com/api/?size=128&background=random&name=' +
-      encodeURIComponent(avatar)
-    );
-  }
-
 }

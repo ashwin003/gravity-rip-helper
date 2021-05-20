@@ -26,6 +26,7 @@ import { RuleTableComponent } from './rule-table/rule-table.component';
 import { EditRacerComponent } from './edit-racer/edit-racer.component';
 import { AvatarSelectorComponent } from './avatar-selector/avatar-selector.component';
 import { AvatarComponent } from './avatar/avatar.component';
+import { AvatarService } from './services/avatar.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { AvatarComponent } from './avatar/avatar.component';
     RuleTableComponent,
     EditRacerComponent,
     AvatarSelectorComponent,
-    AvatarComponent
+    AvatarComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +58,9 @@ import { AvatarComponent } from './avatar/avatar.component';
     MatDividerModule,
     MatBadgeModule
   ],
-  providers: [],
+  providers: [
+    AvatarService
+  ],
   entryComponents: [RulesComponent, EditRacerComponent],
   bootstrap: [AppComponent]
 })

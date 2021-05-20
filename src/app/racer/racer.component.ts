@@ -11,7 +11,7 @@ export class RacerComponent {
 
   @Input() position: number = 0;
 
-  @Input() racer: Racer = { id:0, name: '', avatar: '' };
+  @Input() racer: Racer = { id: 0, name: '', avatar: '' };
 
   @Output() editTriggered: EventEmitter<Racer> = new EventEmitter<Racer>();
 
