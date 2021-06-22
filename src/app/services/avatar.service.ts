@@ -13,6 +13,31 @@ export class AvatarService {
   }
 
   public getRoboAvatarUri(name: string, width: number, height: number): string {
+    const randomizer = Math.random();
+
+    if(randomizer < 0.5) {
+      return this.generateDicebearUri(name, width, height);
+    }
+    
+    return this.generateRobohashAvatarUri(name, width, height);
+  }
+
+  private generateDicebearUri(name: string, width: number, height: number): string {
+    const availableSprites = [
+      'male',
+      'female',
+      'human',
+      'bottts',
+      'avataaars',
+      'micah'
+    ];
+
+    const sprite = this.pickRandom(availableSprites);
+
+    return 'https://avatars.dicebear.com/api/' + sprite + '/' + encodeURIComponent(name) + '.svg?width=' + width + '&height=' + height;
+  }
+
+  private generateRobohashAvatarUri(name: string, width: number, height: number): string {
     const availableBackgroundSets = [
       BackgroundSets.RandomBackground1,
       BackgroundSets.RandomBackground2
