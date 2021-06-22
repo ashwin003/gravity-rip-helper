@@ -10,7 +10,9 @@ $size: 5em;
         margin-bottom: 0.5em;
         margin-right: 0.5em;
         box-sizing: border-box;
+        overflow: hidden;
         background-color: #b4e28a;
+        cursor: pointer;
     
         @media screen and (min-width: 500px) {
             border-radius: 50%;

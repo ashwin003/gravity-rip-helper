@@ -25,20 +25,7 @@ describe('AvatarSelectorComponent', () => {
 
   it('should set the right values for available avatars', () => {
     const available_avatars = component.available_avatars;
-    const invalid = available_avatars.filter((avatar) => !avatar.startsWith('assets/'));
-    expect(invalid.length).toBe(0);
-  });
-
-  it('should highlight the selected avatar', () => {
-    const selected = 'assets/Raymond.png';
-    component.selected = selected;
-    
-    fixture.detectChanges();
-
-    const selectedElement = fixture.debugElement.query(By.css('.selected > img'));
-    const avatar = selectedElement.attributes['src'];
-
-    expect(avatar).toBe(selected);
+    expect(available_avatars.length).toBe(18);
   });
 
   it('should not highlight the unselected avatar', () => {
@@ -51,17 +38,5 @@ describe('AvatarSelectorComponent', () => {
     const invalid = selectedElements.filter((elem) => elem.attributes['src'] === selected);
 
     expect(invalid.length).toBe(0);
-  });
-
-  it('should emit the right value on click', () => {
-    const selected = 'assets/Raymond.png';
-    spyOn(component.avatarSelected, 'emit');
-
-    const figure = fixture.debugElement.query(By.css('[src="' + selected + '"]')).parent;
-    figure?.nativeElement.dispatchEvent(new Event('click'));
-
-    fixture.detectChanges();
-
-    expect(component.avatarSelected.emit).toHaveBeenCalledWith(selected);
   });
 });

@@ -12,24 +12,24 @@ export class AvatarSelectorComponent {
   @Output() avatarSelected: EventEmitter<string> = new EventEmitter<string>();
 
   available_avatars = this.updatePath([
-    'Raymond.png',
-    'Marshal.png',
-    'Bam.png',
-    'Apple.png',
-    'Robin.png',
-    'Drago.png',
-    'Eloise.png',
-    'KKSlider.png',
-    'Beardo.png',
-    'Kabuki.png',
-    'Daisy.png',
-    'Skye.png',
-    'Diana.png',
-    'Erik.png',
-    'Cole.png',
-    'Bluebear.png',
-    'Audie.png',
-    'Ankha.png'
+    'Raymond',
+    'Marshal',
+    'Bam',
+    'Apple',
+    'Robin',
+    'Drago',
+    'Eloise',
+    'KKSlider',
+    'Beardo',
+    'Kabuki',
+    'Daisy',
+    'Skye',
+    'Diana',
+    'Erik',
+    'Cole',
+    'Bluebear',
+    'Audie',
+    'Ankha'
   ]);
 
   constructor(private avatarService: AvatarService) { }
@@ -39,7 +39,7 @@ export class AvatarSelectorComponent {
   }
 
   updatePath(avatars: string[]) {
-    return avatars.map(a => 'assets/' + a);
+    return avatars.map(a => this.avatarService.getRoboAvatarUri(a, 75, 75));
   }
 
   select(avatar: string) {
