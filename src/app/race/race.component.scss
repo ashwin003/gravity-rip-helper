@@ -13,7 +13,6 @@ $arrow-size: 5px;
     min-height: 60px;
     display: inline-block;
     flex-flow: column nowrap;
-    background: white;
     border-radius: 4px;
     overflow: hidden;
 
@@ -97,7 +96,6 @@ $arrow-size: 5px;
   justify-content: space-between;
   box-sizing: border-box;
   cursor: move;
-  background: white;
   font-size: 14px;
   position: relative;
 }
