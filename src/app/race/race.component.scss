@@ -17,6 +17,8 @@ $arrow-size: 5px;
     overflow: hidden;
 
     .box {
+      border-bottom: solid 1px #ccc;
+
       &:before {
         content: "";
         position: absolute;
@@ -89,7 +91,6 @@ $arrow-size: 5px;
   height: 100%;
   width: 100%;
   padding: 10px;
-  border-bottom: solid 1px #ccc;
   color: rgba(0, 0, 0, 0.87);
   flex-direction: row;
   align-items: center;
@@ -98,6 +99,7 @@ $arrow-size: 5px;
   cursor: move;
   font-size: 14px;
   position: relative;
+  backdrop-filter: blur(10px);
 }
 
 .cdk-drag-preview {
