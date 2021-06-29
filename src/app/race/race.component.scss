@@ -2,6 +2,10 @@ $arrow-color: #1023727a;
 $arrow-size: 5px;
 $border-radius: 4px;
 
+@media (prefers-color-scheme: dark) {
+  $arrow-color: #EEEEEE7A !global;
+}
+
 .sheet {
   height: 75vh;
   display: flex;
