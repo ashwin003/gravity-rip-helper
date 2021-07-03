@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Rule } from '../models/rule';
+import { SpecialRoll } from '../models/specialRoll';
 
 @Component({
   selector: 'app-rules',
@@ -8,12 +9,16 @@ import { Rule } from '../models/rule';
 })
 export class RulesComponent {
 
+  d6 = '<span class="d6" title="D6"></span>';
+  weight = 'Weight'.toUpperCase();
+  acceleration = 'Acceleration'.toUpperCase();
+
   helicam_rules: Rule[] = [
     {
       move: 'Advance',
       rolls: {
-        'Racer': 'D6 + acceleration',
-        'Pushback (GM)': 'D6'
+        'Racer':  this.d6 + ' + ' + this.acceleration,
+        'Pushback (GM)': this.d6
       },
       outcome: {
         success: 'Number of places the racer can advance',
@@ -24,8 +29,8 @@ export class RulesComponent {
     {
       move: 'Hold',
       rolls: {
-        'Racer': 'D6 + weight/acceleration',
-        'Pushback (GM)': 'D6'
+        'Racer': this.d6 + ' + ' + this.weight + '/' + this.acceleration,
+        'Pushback (GM)': this.d6
       },
       outcome: {
         success: 'Unless allowed, no racer can pass',
@@ -50,8 +55,8 @@ export class RulesComponent {
     {
       move: 'Overtake',
       rolls: {
-        'Racer': 'D6 + acceleration',
-        'Opponent': 'D6 + weight'
+        'Racer': this.d6 + ' + ' + this.acceleration,
+        'Opponent': this.d6 + ' + ' + this.weight
       },
       outcome: {
         success: '+1 position',
@@ -62,8 +67,8 @@ export class RulesComponent {
     {
       move: 'Slam',
       rolls: {
-        'Racer': 'D6 + weight',
-        'Opponent': 'D6 + weight'
+        'Racer': this.d6 + ' + ' + this.weight,
+        'Opponent': this.d6 + ' + ' + this.weight
       },
       outcome: {
         success: 'Opponent takes 2 integrity damage, and 1D6 additional damage, or moves down one position',
@@ -74,9 +79,9 @@ export class RulesComponent {
     {
       move: 'Block',
       rolls: {
-        'Racer': 'D6 + weight',
-        'Opponent (Overtake)': 'D6 + acceleration',
-        'Opponent (Slam)': 'D6 + weight'
+        'Racer': this.d6 + ' + ' + this.weight,
+        'Opponent (Overtake)':  this.d6 + ' + ' + this.acceleration,
+        'Opponent (Slam)': this.d6 + ' + ' + this.weight
       },
       outcome: {
         success: 'Against overtake: Attempt a free slam',
@@ -84,6 +89,27 @@ export class RulesComponent {
       }
     },
   ];
+
+  special_rolls: SpecialRoll[] = [
+    {
+      title: 'Overclock',
+      description: 'Must be decided before the player rolls',
+      content: [
+        'Unlocks on the second lap.',
+        'Sacrifice integrity points to add additional points to the roll.'
+      ]
+    },
+    {
+      title: 'Illegal Mods',
+      description: 'Must be rolled before using the mod every time',
+      content: [
+        'There is no roll to find out if the mod is effective or not. It’s always effective.',
+        'You just roll to discover the consequences of using it.',
+        'Overclocking can be applied'
+      ]
+    }
+  ];
+  
   constructor() { }
 
 }

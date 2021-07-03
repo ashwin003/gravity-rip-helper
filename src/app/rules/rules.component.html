@@ -16,14 +16,22 @@
       </ng-template>
     </mat-tab>
 
-    <mat-tab label="Overclock">
+    <mat-tab label="Special Rolls 🎲">
       <ng-template matTabContent>
         <div class="tab-content">
-          <p>
-            Unlocks on the second lap. Sacrifice integrity points to add
-            additional points to the roll
-          </p>
-          <p>Must be decided before the player rolls</p>
+          <mat-expansion-panel hideToggle *ngFor="let roll of special_rolls" class="accent-border">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{ roll.title }}
+              </mat-panel-title>
+              <mat-panel-description>
+                {{ roll.description }}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <ol>
+              <li *ngFor="let content of roll.content">{{ content }}</li>
+            </ol>
+          </mat-expansion-panel>
         </div>
       </ng-template>
     </mat-tab>

@@ -8,7 +8,20 @@
 }
 
 .tab-content {
-    padding: 0 12px;
+    padding: 0;
     height: calc(100vh - 8.5em);
     overflow-y: auto;
+}
+
+.mat-expansion-panel-header-title {
+    font-weight: 400;
+}
+
+ol {
+    margin: 0;
+    padding: 0;
+
+    li {
+        font-weight: 200;
+    }
 }

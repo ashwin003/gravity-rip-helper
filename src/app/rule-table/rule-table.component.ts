@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Rule } from '../models/rule';
 
 @Component({
@@ -11,6 +12,10 @@ export class RuleTableComponent {
   @Input() rules: Rule[] = [];
   displayedColumns: string[] = ['move', 'rolls', 'outcome'];
 
-  constructor() { }
+  constructor(private sanitizer: DomSanitizer) { }
+
+  getSanitizedHtml(value: any): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(value);
+  }
 
 }

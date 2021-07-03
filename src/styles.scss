@@ -73,3 +73,23 @@ body {
   position: relative;
   overflow: hidden;
 }
+
+.d6 {
+  display: inline-block;
+  margin-bottom: 5px;
+  &:before {
+      content: '\1F3B2';
+      font-size: 1.5em;
+  }
+}
+
+.accent-border {
+  border: 2px solid transparent;
+  @media (prefers-color-scheme: light) {
+    border-bottom-color: map-get($map: $light-accent, $key: 'A200');
+  } 
+
+  @media (prefers-color-scheme: dark) {
+    border-bottom-color: map-get($map: $dark-accent, $key: 'A200');
+  } 
+}
