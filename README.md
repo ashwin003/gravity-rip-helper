@@ -14,6 +14,9 @@ Click on the circle at the center of the tile to select an avatar to be placed a
 
 During the course of the game, as the players (and NPCs) progress, you can drag the corresponding tiles and drop them to their updated positions in the race track. The other tiles will rearrange themselves automatically to reflect their updated positions.
 
+Circumstances may compel any racer (NPC or otherwise) to retire. Double click any racer in order to move that tile to the end of the list and mark it as "retired". Note that you will have to double click *outside* the inner avatar circle.
+![Retired Racer](/src/assets/retired-racer.png "Retired Racer")
+
 ## Feature requests
 
 Feel free to connect with me if you need more features from the game to be translated into the helper

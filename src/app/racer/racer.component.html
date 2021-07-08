@@ -1,3 +1,3 @@
 <div class="racer" [matBadge]="position" matBadgePosition="before" matBadgeColor="accent">
-  <app-avatar class="avatar" [name]="racer.name" [src]="racer.avatar" (click)="handleAvatarClick()" [matTooltip]="tooltip"></app-avatar>
+  <app-avatar class="avatar" [ngClass]="{'is-alive': racer.isAlive, 'is-dead' : !racer.isAlive }" [name]="racer.name" [src]="racer.avatar" (click)="handleAvatarClick()" [matTooltip]="tooltip"></app-avatar>
 </div>

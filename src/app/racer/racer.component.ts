@@ -11,14 +11,14 @@ export class RacerComponent {
 
   @Input() position: number = 0;
 
-  @Input() racer: Racer = { id: 0, name: '', avatar: '' };
+  @Input() racer: Racer = { id: 0, name: '', avatar: '', isAlive: true };
 
   @Output() editTriggered: EventEmitter<Racer> = new EventEmitter<Racer>();
 
-  constructor() { }
-
   handleAvatarClick() {
-    this.editTriggered.emit(this.racer);
+    if(this.racer.isAlive) {
+      this.editTriggered.emit(this.racer);
+    }
   }
 
   public get tooltip() {

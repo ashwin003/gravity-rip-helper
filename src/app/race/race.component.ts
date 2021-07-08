@@ -13,6 +13,8 @@ import { uniqueNamesGenerator, Config, names } from 'unique-names-generator';
 export class RaceComponent {
   racers: Racer[] = [...Array(20).keys()].map(this.getRacer);
 
+  deathCount = 0;
+
   constructor(public dialog: MatDialog) {}
 
   public get first_col() {
@@ -35,6 +37,20 @@ export class RaceComponent {
     fc.reverse();
 
     return fc;
+  }
+
+  public handleDoubleClick(racer: Racer) {
+    if(racer.isAlive) {
+      racer.isAlive = false;
+      racer.avatar = 'assets/cry.png';
+      
+      this.deathCount++;
+
+      const currentIndex = this.indexOf(racer) - 1;
+      const newIndex = this.racers.length - this.deathCount;
+
+      moveItemInArray(this.racers, currentIndex, newIndex);
+    }
   }
 
   public indexOf(element: any): number {
@@ -97,6 +113,7 @@ export class RaceComponent {
       id: index,
       name: uniqueNamesGenerator(config),
       avatar: '',
+      isAlive: true
     };
   }
 }
