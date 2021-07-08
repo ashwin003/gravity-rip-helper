@@ -22,7 +22,7 @@ export class RulesComponent {
       },
       outcome: {
         success: 'Number of places the racer can advance',
-        failure: 'Fails if pushback roll is higher than advance roll'
+        failure: 'Racer may not advance'
       }
     },
 
@@ -59,20 +59,8 @@ export class RulesComponent {
         'Opponent': this.d6 + ' + ' + this.weight
       },
       outcome: {
-        success: '+1 position',
+        success: 'Racer moves up one position',
         failure: 'Overtake fails, and the opponent may attempt a free slam'
-      }
-    },
-
-    {
-      move: 'Slam',
-      rolls: {
-        'Racer': this.d6 + ' + ' + this.weight,
-        'Opponent': this.d6 + ' + ' + this.weight
-      },
-      outcome: {
-        success: 'Opponent takes 2 integrity damage, and 1D6 additional damage, or moves down one position',
-        failure: 'Racer takes 2 integrity damage'
       }
     },
 
@@ -86,6 +74,18 @@ export class RulesComponent {
       outcome: {
         success: 'Against overtake: Attempt a free slam',
         failure: 'Against overtake: move down a position'
+      }
+    },
+
+    {
+      move: 'Slam',
+      rolls: {
+        'Racer': this.d6 + ' + ' + this.weight,
+        'Opponent': this.d6 + ' + ' + this.weight
+      },
+      outcome: {
+        success: 'Opponent takes 2 integrity damage, and '+ this.d6 + ' additional damage, or moves down one position',
+        failure: 'Racer takes 2 integrity damage<br /><br /><br />'
       }
     },
   ];
@@ -105,11 +105,10 @@ export class RulesComponent {
       content: [
         'There is no roll to find out if the mod is effective or not. It’s always effective.',
         'You just roll to discover the consequences of using it.',
-        'Overclocking can be applied'
+        'Overclocking can be applied',
+        'Requires two rolls: One for determining whether the mod is discovered, and another for determining it\'s survival post usage',
+        'If caught using an illegal mod, you\'ll be disqualified. You can remain on the track for one lap before the grav drones eventually grab you, but you won\'t place in the ranking for this race.'
       ]
     }
   ];
-  
-  constructor() { }
-
 }
