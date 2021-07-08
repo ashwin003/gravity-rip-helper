@@ -41,8 +41,7 @@ export class RulesComponent {
     {
       move: 'Retreat',
       rolls: {
-        'Racer': 'No need to roll',
-        'Pushback (GM)': 'No need to roll'
+        'No need to roll': ''
       },
       outcome: {
         success: 'Player can retreat any number of places',

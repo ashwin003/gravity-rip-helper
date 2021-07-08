@@ -13,7 +13,7 @@
     <td mat-cell *matCellDef="let element" class="cell rolls">
       <span *ngFor="let item of element.rolls | keyvalue; let last = last">
         <h4>{{ item.key }}</h4>
-        <span [innerHtml]="getSanitizedHtml(item.value)"></span>
+        <span *ngIf="item.value" [innerHtml]="getSanitizedHtml(item.value)"></span>
         <mat-divider *ngIf="!last"></mat-divider>
       </span>
     </td>
