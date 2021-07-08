@@ -11,6 +11,8 @@ export class AvatarComponent {
 
   @Input() name: string = '';
 
+  @Input() isAlive: boolean = true;
+
   constructor(private avatarService: AvatarService) {}
 
   public get imageSource() {

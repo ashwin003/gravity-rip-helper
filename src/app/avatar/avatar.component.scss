@@ -6,7 +6,10 @@ figure {
     margin: 0;
     text-align: center;
     overflow: hidden;
-    background-color: #b4e28a;
+
+    &.is-alive {
+        background-color: #b4e28a;
+    }
 
     @media screen and (min-width: 500px) {
         border-radius: 50%;
