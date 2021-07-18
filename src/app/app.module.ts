@@ -28,6 +28,8 @@ import { EditRacerComponent } from './edit-racer/edit-racer.component';
 import { AvatarSelectorComponent } from './avatar-selector/avatar-selector.component';
 import { AvatarComponent } from './avatar/avatar.component';
 import { AvatarService } from './services/avatar.service';
+import { HintsComponent } from './hints/hints.component';
+import { TypingDirective } from './directives/typing.directive';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { AvatarService } from './services/avatar.service';
     EditRacerComponent,
     AvatarSelectorComponent,
     AvatarComponent,
+    HintsComponent,
+    TypingDirective,
   ],
   imports: [
     BrowserModule,

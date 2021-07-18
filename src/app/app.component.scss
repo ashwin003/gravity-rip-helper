@@ -30,20 +30,21 @@
 }
 
 .main-container {
-  height: calc(100vh - 7em);
+  height: calc(100vh - 5.75rem);
   width: 100%;
   box-sizing: border-box;
   margin: 1em 0;
   margin-bottom: 0;
   overflow-y: hidden;
-
-  @media screen and (min-width: 1024px) {
-    margin: 1em 0.5em;
-    width: calc(100% - 1em);
-  }
 }
 
 .mat-drawer-content,
 .mat-drawer-inner-container {
   overflow: hidden;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
