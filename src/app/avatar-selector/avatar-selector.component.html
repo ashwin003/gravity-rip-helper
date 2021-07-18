@@ -1,5 +1,5 @@
 <div class="avatar-selector-container">
-    <figure class="figure" *ngFor="let avatar of available_avatars" [class.selected]="isSelected(avatar)" (click)="select(avatar)">
+    <figure class="figure gradient" *ngFor="let avatar of available_avatars" [class.selected]="isSelected(avatar)" (click)="select(avatar)">
         <img [src]="imageSource(avatar)" />
     </figure>
 </div>

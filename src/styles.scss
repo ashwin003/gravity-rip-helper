@@ -2,7 +2,6 @@
 
 @include mat.core();
 
-
 $light-primary: mat.define-palette(mat.$purple-palette);
 $light-accent: mat.define-palette(mat.$teal-palette, A200, A100, A400);
 
@@ -78,18 +77,37 @@ body {
   display: inline-block;
   margin-bottom: 5px;
   &:before {
-      content: '\1F3B2';
-      font-size: 1.5em;
+    content: "\1F3B2";
+    font-size: 1.5em;
   }
 }
 
 .accent-border {
   border: 2px solid transparent;
   @media (prefers-color-scheme: light) {
-    border-bottom-color: map-get($map: $light-accent, $key: 'A200');
-  } 
+    border-bottom-color: map-get($map: $light-accent, $key: "A200");
+  }
 
   @media (prefers-color-scheme: dark) {
-    border-bottom-color: map-get($map: $dark-accent, $key: 'A200');
-  } 
+    border-bottom-color: map-get($map: $dark-accent, $key: "A200");
+  }
+}
+
+.gradient {
+  $transparentizer: 0.8;
+  @media screen and (prefers-color-scheme: light) {
+    background: radial-gradient(
+      circle,
+      transparentize(map-get($map: $light-primary, $key: 500), $transparentizer / 2) 6.9%,
+      transparentize(map-get($map: $light-accent, $key: "A200"), $transparentizer),
+    );
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    background: radial-gradient(
+      circle,
+      transparentize(map-get($map: $dark-primary, $key: 500), $transparentizer / 2) 6.9%,
+      transparentize(map-get($map: $dark-accent, $key: "A200"), $transparentizer),
+    );
+  }
 }
