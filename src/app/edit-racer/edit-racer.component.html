@@ -7,6 +7,6 @@
   <app-avatar-selector [selected]="data.racer.avatar" (avatarSelected)="handleAvatarSelection($event)"></app-avatar-selector>
 </mat-dialog-content>
 <mat-dialog-actions align="end" class="actions">
-  <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-button color="primary" [mat-dialog-close]="data.racer" cdkFocusInitial>Ok</button>
+  <button mat-flat-button (click)="onCancel()">Cancel</button>
+  <button mat-flat-button color="primary" [mat-dialog-close]="data.racer" cdkFocusInitial>OK</button>
 </mat-dialog-actions>

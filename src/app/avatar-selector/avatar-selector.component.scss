@@ -1,29 +1,36 @@
 $size: 5em;
 
 .avatar-selector-container {
-    .figure {
-        display: inline-block;
-        width: $size;
-        height: $size;
-        border: 5px solid rgba(0, 0, 0, 0.87);
-        margin: 0;
-        margin-bottom: 0.5em;
-        margin-right: 0.5em;
-        box-sizing: border-box;
-        overflow: hidden;
-        background-color: #b4e28a;
-        cursor: pointer;
-    
-        @media screen and (min-width: 500px) {
-            border-radius: 50%;
-        }
-    
-        &.selected {
-            border-color: #BB1717;
-        }
-    
-        img {
-            height: 100%;
-        }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  @media screen and (max-width: 500px) {
+    justify-content: space-evenly;
+  }
+
+  .figure {
+    display: inline-block;
+    width: $size;
+    height: $size;
+    border: 5px solid rgba(0, 0, 0, 0.87);
+    margin: 0.1em;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #b4e28a;
+    cursor: pointer;
+
+    @media screen and (min-width: 500px) {
+      margin: 0.25em;
+      border-radius: 50%;
     }
+
+    &.selected {
+      border-color: #bb1717;
+    }
+
+    img {
+      height: 100%;
+    }
+  }
 }
