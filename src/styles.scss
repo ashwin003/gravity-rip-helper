@@ -52,7 +52,6 @@ $dark-theme: mat.define-dark-theme(
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      pointer-events: none;
     }
 
     &.mat-badge-overlap.mat-badge-before .mat-badge-content {
@@ -149,4 +148,8 @@ body {
       )
     );
   }
+}
+
+.mat-badge-content {
+  pointer-events:all !important;
 }
