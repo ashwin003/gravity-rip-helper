@@ -30,6 +30,7 @@ import { AvatarComponent } from './avatar/avatar.component';
 import { AvatarService } from './services/avatar.service';
 import { HintsComponent } from './hints/hints.component';
 import { TypingDirective } from './directives/typing.directive';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { TypingDirective } from './directives/typing.directive';
     MatTableModule,
     MatDividerModule,
     MatBadgeModule,
-    MatExpansionModule
+    MatExpansionModule,
+    LazyLoadImageModule
   ],
   providers: [
     AvatarService

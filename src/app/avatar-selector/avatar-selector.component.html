@@ -1,5 +1,5 @@
 <div class="avatar-selector-container">
     <figure class="figure gradient" *ngFor="let avatar of available_avatars" [class.selected]="isSelected(avatar)" (click)="select(avatar)">
-        <img [src]="imageSource(avatar)" />
+        <img defaultImage="assets/racer.png" [lazyLoad]="imageSource(avatar)" />
     </figure>
 </div>
