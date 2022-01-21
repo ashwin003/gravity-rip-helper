@@ -98,7 +98,7 @@ describe('RuleTableComponent', () => {
       expect(printedRolls).toEqual(rolls);
 
       // Outcomes
-      const outcomes = [rule.outcome.success, rule.outcome.failure];
+      const outcomes = [rule.outcome.success, rule.outcome.failure].filter(e => e != '');
       const printedOutcomes = [...cells[2].children].filter(c => c.nodeName == 'SPAN').map(c => c.innerText);
       expect(printedOutcomes).toEqual(outcomes);
     }

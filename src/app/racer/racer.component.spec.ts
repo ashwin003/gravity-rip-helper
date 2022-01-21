@@ -9,7 +9,7 @@ import { AvatarComponent } from '../avatar/avatar.component';
 describe('RacerComponent', () => {
   let component: RacerComponent;
   let fixture: ComponentFixture<RacerComponent>;
-  const racer: Racer = { id: 0, name: 'John Smith', avatar: '' };
+  const racer: Racer = { id: 0, name: 'John Smith', avatar: '', isAlive: true };
   const position: number = 1;
 
   beforeEach(async () => {

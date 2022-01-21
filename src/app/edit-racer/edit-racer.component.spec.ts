@@ -9,7 +9,7 @@ import { AvatarSelectorComponent } from '../avatar-selector/avatar-selector.comp
 describe('EditRacerComponent', () => {
   let component: EditRacerComponent;
   let fixture: ComponentFixture<EditRacerComponent>;
-  const racer: Racer = { id: 0, name: 'John Smith', avatar: '' };
+  const racer: Racer = { id: 0, name: 'John Smith', avatar: '', isAlive: true };
   const position: number = 1;
 
   beforeEach(async () => {
@@ -43,7 +43,7 @@ describe('EditRacerComponent', () => {
 
   it('should create a footer with the right buttons', () => {
     const actions = fixture.debugElement.queryAll(By.css('.actions  button')).map((de) => de.nativeElement.innerText);
-    const expectedActions = ["Cancel", "Ok"];
+    const expectedActions = ["Cancel", "OK"];
 
     expect(actions).toEqual(expectedActions);
   });

@@ -44,7 +44,7 @@ describe('RulesComponent', () => {
   it('should create the right tabs', () => {
     const tabGroup = fixture.debugElement.query(By.directive(MatTabGroup));
     const tabLabels = tabGroup.queryAll(By.directive(MatTabLabelWrapper)).map((tab) => tab.nativeElement.innerText);
-    const expectedLabels = ["Helicam", "Maneuver", "Overclock"];
+    const expectedLabels = ["Helicam", "Maneuver", "Special Rolls 🎲"];
 
     expect(tabLabels).toEqual(expectedLabels);
   });
