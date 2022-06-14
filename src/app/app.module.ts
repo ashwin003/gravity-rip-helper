@@ -33,43 +33,42 @@ import { TypingDirective } from './directives/typing.directive';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    RulesComponent,
-    RaceComponent,
-    RacerComponent,
-    RuleTableComponent,
-    EditRacerComponent,
-    AvatarSelectorComponent,
-    AvatarComponent,
-    HintsComponent,
-    TypingDirective,
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    DragDropModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatCardModule,
-    MatTooltipModule,
-    MatDialogModule,
-    MatTabsModule,
-    MatTableModule,
-    MatDividerModule,
-    MatBadgeModule,
-    MatExpansionModule,
-    LazyLoadImageModule
-  ],
-  providers: [
-    AvatarService
-  ],
-  entryComponents: [RulesComponent, EditRacerComponent],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        RulesComponent,
+        RaceComponent,
+        RacerComponent,
+        RuleTableComponent,
+        EditRacerComponent,
+        AvatarSelectorComponent,
+        AvatarComponent,
+        HintsComponent,
+        TypingDirective,
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        DragDropModule,
+        LayoutModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule,
+        MatCardModule,
+        MatTooltipModule,
+        MatDialogModule,
+        MatTabsModule,
+        MatTableModule,
+        MatDividerModule,
+        MatBadgeModule,
+        MatExpansionModule,
+        LazyLoadImageModule
+    ],
+    providers: [
+        AvatarService
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
