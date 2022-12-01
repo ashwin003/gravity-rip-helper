@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatLegacyTabBody as MatTabBody, MatLegacyTabGroup as MatTabGroup, MatLegacyTabLabelWrapper as MatTabLabelWrapper, MatLegacyTabsModule as MatTabsModule } from '@angular/material/legacy-tabs';
-import {  MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';
+import { MatTabBody, MatTabGroup, MatTabLabelWrapper, MatTabsModule } from '@angular/material/tabs';
+import {  MatTableModule } from '@angular/material/table';
 import { MatDividerModule } from '@angular/material/divider';
 import { By } from '@angular/platform-browser';
 import { RulesComponent } from './rules.component';

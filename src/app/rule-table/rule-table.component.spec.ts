@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import {  MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';
+import {  MatTableModule } from '@angular/material/table';
 import { MatDividerModule } from '@angular/material/divider';
 import { RuleTableComponent } from './rule-table.component';
 import { Rule } from '../models/rule';

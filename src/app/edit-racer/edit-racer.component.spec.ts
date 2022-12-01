@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { EditRacerComponent } from './edit-racer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA, MatLegacyDialogRef as MatDialogRef, MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { Racer } from '../models/racer';
 import { AvatarSelectorComponent } from '../avatar-selector/avatar-selector.component';
 

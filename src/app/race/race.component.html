@@ -1,4 +1,4 @@
-<mat-card class="sheet">
+<mat-card appearance="outlined" class="sheet">
     <div cdkDropList class="list" [cdkDropListData]="first_col" #first="cdkDropList" (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[second,third,fourth]">
       <div class="box gradient" *ngFor="let racer of first_col" cdkDrag [cdkDragDisabled]="!racer.isAlive" (dblclick)="handleDoubleClick(racer)">
         <app-racer [position]="indexOf(racer)" [racer]="racer" (editTriggered)="editTriggered($event)"></app-racer>
