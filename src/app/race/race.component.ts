@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Racer } from '../models/racer';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { EditRacerComponent } from '../edit-racer/edit-racer.component';
 import { uniqueNamesGenerator, Config, names } from 'unique-names-generator';
 
