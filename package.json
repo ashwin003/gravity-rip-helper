@@ -1,6 +1,6 @@
 {
   "name": "gravity-rip-helper",
-  "version": "2.0.50",
+  "version": "2.0.51",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
