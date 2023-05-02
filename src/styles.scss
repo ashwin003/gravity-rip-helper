@@ -43,6 +43,7 @@ $dark-theme: mat.define-dark-theme(
 html,
 body {
   height: 100vh;
+  height: calc(100vh - env(safe-area-inset-top, 0));
 }
 body {
   margin: 0;
