@@ -77,18 +77,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "gravity-rip-helper:build"
+            "buildTarget": "gravity-rip-helper:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "gravity-rip-helper:build:production"
+              "buildTarget": "gravity-rip-helper:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "gravity-rip-helper:build"
+            "buildTarget": "gravity-rip-helper:build"
           }
         },
         "test": {
