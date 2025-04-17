@@ -25,16 +25,15 @@
   text-transform: uppercase;
   line-height: normal;
   max-width: 99vw;
+  overflow-wrap: break-word;
+  white-space: break-spaces;
+  text-overflow: ellipsis;
+  overflow: hidden;
 
   @media screen and (min-width: 1000px) {
     max-width: 49vw;
     font-size: medium;
   }
-  
-  overflow-wrap: break-word;
-  white-space: break-spaces;
-  text-overflow: ellipsis;
-  overflow: hidden;
 
   &:not(:empty):after {
     content: "|";

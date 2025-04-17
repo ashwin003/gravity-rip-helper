@@ -1,5 +1,7 @@
 @use '@angular/material' as mat;
 @use 'sass:math' as math;
+@use 'sass:color';
+@use 'sass:map';
 
 @include mat.all-component-typographies();
 @include mat.elevation-classes();
@@ -87,11 +89,11 @@ body {
 .accent-border {
   border: 2px solid transparent;
   @media (prefers-color-scheme: light) {
-    border-bottom-color: map-get($map: $light-accent, $key: "A200");
+    border-bottom-color: map.get($map: $light-accent, $key: "A200");
   }
 
   @media (prefers-color-scheme: dark) {
-    border-bottom-color: map-get($map: $dark-accent, $key: "A200");
+    border-bottom-color: map.get($map: $dark-accent, $key: "A200");
   }
 }
 
@@ -100,14 +102,14 @@ body {
   @media screen and (prefers-color-scheme: light) {
     background: radial-gradient(
       circle,
-      transparentize(
-          map-get($map: $light-primary, $key: 500),
-         math.div($transparentizer, 2)
+      color.adjust(
+          map.get($map: $light-primary, $key: 500),
+         $alpha: math.div($transparentizer, 2)
         )
         6.9%,
-      transparentize(
-        map-get($map: $light-accent, $key: "A200"),
-        $transparentizer
+      color.adjust(
+        map.get($map: $light-accent, $key: "A200"),
+        $alpha: $transparentizer
       )
     );
   }
@@ -115,14 +117,14 @@ body {
   @media screen and (prefers-color-scheme: dark) {
     background: radial-gradient(
       circle,
-      transparentize(
-          map-get($map: $dark-primary, $key: 500),
-          math.div($transparentizer, 2)
+      color.adjust(
+          map.get($map: $dark-primary, $key: 500),
+          $alpha: math.div($transparentizer, 2)
         )
         6.9%,
-      transparentize(
-        map-get($map: $dark-accent, $key: "A200"),
-        $transparentizer
+      color.adjust(
+        map.get($map: $dark-accent, $key: "A200"),
+        $alpha: $transparentizer
       )
     );
   }
