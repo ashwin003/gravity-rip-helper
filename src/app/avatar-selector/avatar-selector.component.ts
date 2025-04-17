@@ -2,9 +2,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AvatarService } from '../services/avatar.service';
 
 @Component({
-  selector: 'app-avatar-selector',
-  templateUrl: './avatar-selector.component.html',
-  styleUrls: ['./avatar-selector.component.scss']
+    selector: 'app-avatar-selector',
+    templateUrl: './avatar-selector.component.html',
+    styleUrls: ['./avatar-selector.component.scss'],
+    standalone: false
 })
 export class AvatarSelectorComponent {
   @Input() selected: string = '';

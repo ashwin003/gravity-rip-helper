@@ -13,7 +13,8 @@ import { Observable, Subscription } from 'rxjs';
 import { Typed } from '../models/typed';
 
 @Directive({
-  selector: '[appTyping]',
+    selector: '[appTyping]',
+    standalone: false
 })
 export class TypingDirective implements OnInit, AfterViewInit, OnChanges {
   typed: Typed;

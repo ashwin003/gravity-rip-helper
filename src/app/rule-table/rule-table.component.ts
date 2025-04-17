@@ -3,9 +3,10 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Rule } from '../models/rule';
 
 @Component({
-  selector: 'app-rule-table',
-  templateUrl: './rule-table.component.html',
-  styleUrls: ['./rule-table.component.scss']
+    selector: 'app-rule-table',
+    templateUrl: './rule-table.component.html',
+    styleUrls: ['./rule-table.component.scss'],
+    standalone: false
 })
 export class RuleTableComponent {
 

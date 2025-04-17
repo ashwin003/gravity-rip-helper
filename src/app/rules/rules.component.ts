@@ -3,9 +3,10 @@ import { Rule } from '../models/rule';
 import { SpecialRoll } from '../models/specialRoll';
 
 @Component({
-  selector: 'app-rules',
-  templateUrl: './rules.component.html',
-  styleUrls: ['./rules.component.scss']
+    selector: 'app-rules',
+    templateUrl: './rules.component.html',
+    styleUrls: ['./rules.component.scss'],
+    standalone: false
 })
 export class RulesComponent {
 
