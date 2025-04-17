@@ -34,7 +34,7 @@ export class AvatarService {
 
     const sprite = this.pickRandom(availableSprites);
 
-    return 'https://avatars.dicebear.com/api/' + sprite + '/' + encodeURIComponent(name) + '.svg?width=' + width + '&height=' + height;
+    return 'https://api.dicebear.com/9.x/' + sprite + '/' + encodeURIComponent(name) + '.svg?width=' + width + '&height=' + height;
   }
 
   private generateRobohashAvatarUri(name: string, width: number, height: number): string {
