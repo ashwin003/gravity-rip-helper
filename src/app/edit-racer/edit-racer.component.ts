@@ -6,9 +6,10 @@ import {
 } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-edit-racer',
-  templateUrl: './edit-racer.component.html',
-  styleUrls: ['./edit-racer.component.scss'],
+    selector: 'app-edit-racer',
+    templateUrl: './edit-racer.component.html',
+    styleUrls: ['./edit-racer.component.scss'],
+    standalone: false
 })
 export class EditRacerComponent {
   originalAvatar: string;

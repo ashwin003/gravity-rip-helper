@@ -6,9 +6,10 @@ import { EditRacerComponent } from '../edit-racer/edit-racer.component';
 import { uniqueNamesGenerator, Config, names } from 'unique-names-generator';
 
 @Component({
-  selector: 'app-race',
-  templateUrl: './race.component.html',
-  styleUrls: ['./race.component.scss'],
+    selector: 'app-race',
+    templateUrl: './race.component.html',
+    styleUrls: ['./race.component.scss'],
+    standalone: false
 })
 export class RaceComponent {
   racers: Racer[] = [...Array(20).keys()].map(this.getRacer);

@@ -3,9 +3,10 @@ import { EventEmitter } from '@angular/core';
 import { Racer } from '../models/racer';
 
 @Component({
-  selector: 'app-racer',
-  templateUrl: './racer.component.html',
-  styleUrls: ['./racer.component.scss']
+    selector: 'app-racer',
+    templateUrl: './racer.component.html',
+    styleUrls: ['./racer.component.scss'],
+    standalone: false
 })
 export class RacerComponent {
 

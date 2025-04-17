@@ -2,9 +2,10 @@ import { Component, Input } from '@angular/core';
 import { AvatarService } from '../services/avatar.service';
 
 @Component({
-  selector: 'app-avatar',
-  templateUrl: './avatar.component.html',
-  styleUrls: ['./avatar.component.scss'],
+    selector: 'app-avatar',
+    templateUrl: './avatar.component.html',
+    styleUrls: ['./avatar.component.scss'],
+    standalone: false
 })
 export class AvatarComponent {
   @Input() src: string = '';
