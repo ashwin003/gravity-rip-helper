@@ -18,7 +18,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDividerModule } from '@angular/material/divider';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { MatBadgeModule } from '@angular/material/badge';
 import { RulesComponent } from './rules/rules.component';
 import { RaceComponent } from './race/race.component';
@@ -32,8 +32,7 @@ import { HintsComponent } from './hints/hints.component';
 import { TypingDirective } from './directives/typing.directive';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         AppComponent,
         RulesComponent,
         RaceComponent,
@@ -45,10 +44,8 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
         HintsComponent,
         TypingDirective,
     ],
-    imports: [
-        BrowserModule,
+    bootstrap: [AppComponent], imports: [BrowserModule,
         BrowserAnimationsModule,
-        HttpClientModule,
         DragDropModule,
         LayoutModule,
         MatToolbarModule,
@@ -64,11 +61,8 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
         MatDividerModule,
         MatBadgeModule,
         MatExpansionModule,
-        LazyLoadImageModule
-    ],
-    providers: [
-        AvatarService
-    ],
-    bootstrap: [AppComponent]
-})
+        LazyLoadImageModule], providers: [
+        AvatarService,
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule { }
