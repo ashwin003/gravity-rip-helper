@@ -24,17 +24,17 @@ export class AvatarService {
 
   private generateDicebearUri(name: string, width: number, height: number): string {
     const availableSprites = [
-      'male',
-      'female',
-      'human',
+      'adventurer',
+      'lorelei',
+      'pixel-art',
       'bottts',
       'avataaars',
-      'micah'
+      'thumbs'
     ];
 
     const sprite = this.pickRandom(availableSprites);
 
-    return 'https://api.dicebear.com/9.x/' + sprite + '/' + encodeURIComponent(name) + '.svg?width=' + width + '&height=' + height;
+    return 'https://api.dicebear.com/9.x/' + sprite + '/' + 'svg?width=' + width + '&height=' + height + '&seed=' + encodeURIComponent(name);
   }
 
   private generateRobohashAvatarUri(name: string, width: number, height: number): string {
