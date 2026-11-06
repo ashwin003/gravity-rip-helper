@@ -13,14 +13,14 @@ describe('RulesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RulesComponent, RuleTableComponent ],
-      imports:[
+    imports: [
         BrowserAnimationsModule,
         MatTabsModule,
         MatTableModule,
-        MatDividerModule
-      ]
-    })
+        MatDividerModule,
+        RulesComponent, RuleTableComponent
+    ]
+})
     .compileComponents();
   });
 

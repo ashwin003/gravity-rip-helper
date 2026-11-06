@@ -1,12 +1,17 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { Racer } from '../models/racer';
+import { MatBadge } from '@angular/material/badge';
+import { AvatarComponent } from '../avatar/avatar.component';
+import { NgClass } from '@angular/common';
+import { MatTooltip } from '@angular/material/tooltip';
 
 @Component({
     selector: 'app-racer',
     templateUrl: './racer.component.html',
     styleUrls: ['./racer.component.scss'],
-    standalone: false
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [MatBadge, AvatarComponent, NgClass, MatTooltip]
 })
 export class RacerComponent {
 

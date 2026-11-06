@@ -14,12 +14,12 @@ describe('RacerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RacerComponent, AvatarComponent ],
-      imports:[
+    imports: [
         MatBadgeModule,
-        MatTooltipModule
-      ]
-    })
+        MatTooltipModule,
+        RacerComponent, AvatarComponent
+    ]
+})
     .compileComponents();
   });
 

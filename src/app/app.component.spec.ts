@@ -15,24 +15,22 @@ import { By } from '@angular/platform-browser';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
+    imports: [
         RouterTestingModule,
         BrowserAnimationsModule,
         DragDropModule,
         MatToolbarModule,
         MatTabsModule,
         MatSidenavModule,
-        MatCardModule
-      ],
-      declarations: [
+        MatCardModule,
         RulesComponent,
         RaceComponent,
-        AppComponent,
-      ],
-      providers: [
+        AppComponent
+    ],
+    providers: [
         { provide: MatDialog, useValue: {} }
-      ]
-    }).compileComponents();
+    ]
+}).compileComponents();
   });
 
   it('should create the app', () => {

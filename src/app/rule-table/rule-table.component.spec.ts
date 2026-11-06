@@ -49,12 +49,12 @@ describe('RuleTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RuleTableComponent ],
-      imports:[
+    imports: [
         MatTableModule,
-        MatDividerModule
-      ]
-    })
+        MatDividerModule,
+        RuleTableComponent
+    ]
+})
     .compileComponents();
   });
 

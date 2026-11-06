@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { MatToolbar } from '@angular/material/toolbar';
+import { TypingDirective } from '../directives/typing.directive';
 
 @Component({
     selector: 'app-hints',
     templateUrl: './hints.component.html',
     styleUrls: ['./hints.component.scss'],
-    standalone: false
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [MatToolbar, TypingDirective]
 })
 export class HintsComponent {
 
