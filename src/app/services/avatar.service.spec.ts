@@ -22,6 +22,20 @@ describe('AvatarService', () => {
     expect(actualUri).toBe(expectedUri);
   });
 
+  it('should generate a RoboHash uri', () => {
+    spyOn(Math, 'random').and.returnValues(0.9, 0, 0); // RoboHash, bg1, set1
+
+    expect(service.getRoboAvatarUri('John Smith', 75, 75))
+      .toBe('https://robohash.org/John%20Smith?set=set1&bgset=bg1&size=75x75');
+  });
+
+  it('should generate a DiceBear uri', () => {
+    spyOn(Math, 'random').and.returnValues(0.1, 0); // DiceBear, adventurer
+
+    expect(service.getRoboAvatarUri('John Smith', 75, 75))
+      .toBe('https://api.dicebear.com/9.x/adventurer/svg?width=75&height=75&seed=John%20Smith');
+  });
+
   it('should return proper avatar uri when avatar is set', () => {
     const name = 'John Smith';
     const expectedUri = 'assets/Raymond.png';
