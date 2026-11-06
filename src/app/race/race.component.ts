@@ -1,22 +1,27 @@
-import { Component } from '@angular/core';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef, inject } from '@angular/core';
+import { CdkDragDrop, moveItemInArray, CdkDropList, CdkDrag } from '@angular/cdk/drag-drop';
 import { Racer } from '../models/racer';
 import { MatDialog } from '@angular/material/dialog';
 import { EditRacerComponent } from '../edit-racer/edit-racer.component';
 import { uniqueNamesGenerator, Config, names } from 'unique-names-generator';
+import { MatCard } from '@angular/material/card';
+import { RacerComponent } from '../racer/racer.component';
 
 @Component({
     selector: 'app-race',
     templateUrl: './race.component.html',
     styleUrls: ['./race.component.scss'],
-    standalone: false
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [MatCard, CdkDropList, CdkDrag, RacerComponent]
 })
 export class RaceComponent {
+  dialog = inject(MatDialog);
+
   racers: Racer[] = [...Array(20).keys()].map(this.getRacer);
 
   deathCount = 0;
 
-  constructor(public dialog: MatDialog) {}
+  private readonly cdr = inject(ChangeDetectorRef);
 
   public get first_col() {
     return this.racers.slice(0, 5);
@@ -42,12 +47,13 @@ export class RaceComponent {
 
   public handleDoubleClick(racer: Racer) {
     if(racer.isAlive) {
-      racer.isAlive = false;
-      racer.avatar = 'assets/cry.png';
-      
+      const currentIndex = this.indexOf(racer) - 1;
+
+      // Replace rather than mutate, so the OnPush RacerComponent sees a new input.
+      this.racers[currentIndex] = { ...racer, isAlive: false, avatar: 'assets/cry.png' };
+
       this.deathCount++;
 
-      const currentIndex = this.indexOf(racer) - 1;
       const newIndex = this.racers.length - this.deathCount;
 
       moveItemInArray(this.racers, currentIndex, newIndex);
@@ -77,7 +83,8 @@ export class RaceComponent {
     const instance = this;
     const dialogRef = this.dialog.open(EditRacerComponent, {
       data: {
-        racer,
+        // Edit a copy; the result replaces the original only when confirmed.
+        racer: { ...racer },
         position: instance.indexOf(racer),
       },
       id: 'edit-racer',
@@ -89,6 +96,7 @@ export class RaceComponent {
       if (result) {
         const index = this.indexOf(result) - 1;
         this.racers[index] = result;
+        this.cdr.markForCheck();
       }
     });
   }

@@ -10,6 +10,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { RacerComponent } from '../racer/racer.component';
 import { AvatarComponent } from '../avatar/avatar.component';
 import { By } from '@angular/platform-browser';
+import { of } from 'rxjs';
 
 describe('RaceComponent', () => {
   let component: RaceComponent;
@@ -17,17 +18,17 @@ describe('RaceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RaceComponent, RacerComponent, AvatarComponent ],
-      imports: [
+    imports: [
         DragDropModule,
         MatCardModule,
         MatTooltipModule,
-        MatBadgeModule
-      ],
-      providers: [
+        MatBadgeModule,
+        RaceComponent, RacerComponent, AvatarComponent
+    ],
+    providers: [
         { provide: MatDialog, useValue: {} }
-      ]
-    })
+    ]
+})
     .compileComponents();
   });
 
@@ -48,6 +49,31 @@ describe('RaceComponent', () => {
   it('should render the racers in 4 columns', () => {
     const columns = fixture.debugElement.queryAll(By.css('.list'));
     expect(columns.length).toBe(4);
+  });
+
+  it('should re-render a racer as retired after a double click', () => {
+    expect(fixture.debugElement.queryAll(By.css('.is-dead')).length).toBe(0);
+
+    // Retire the last racer: its position doesn't change, so only a new racer
+    // object (not an in-place mutation) makes the OnPush RacerComponent re-render.
+    const lastColumn = fixture.debugElement.queryAll(By.css('.list'))[3];
+    lastColumn.query(By.css('.box')).triggerEventHandler('dblclick');
+    fixture.detectChanges();
+
+    expect(fixture.debugElement.queryAll(By.css('.is-dead')).length).toBe(1);
+  });
+
+  it('should re-render a racer after the edit dialog is confirmed', () => {
+    const racer = component.racers[0];
+    const edited = { ...racer, avatar: 'assets/edited.png' };
+    component.dialog = { open: () => ({ afterClosed: () => of(edited) }) } as unknown as MatDialog;
+
+    component.editTriggered(racer);
+    fixture.detectChanges();
+
+    const avatar = fixture.debugElement.query(By.directive(AvatarComponent)).componentInstance as AvatarComponent;
+    expect(avatar.src).toBe('assets/edited.png');
+    expect(racer.avatar).toBe('');
   });
 
   it('should render the 5 racers in each', () => {

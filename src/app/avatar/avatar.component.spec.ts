@@ -9,11 +9,11 @@ describe('AvatarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AvatarComponent ],
-      providers:[
+    imports: [AvatarComponent],
+    providers: [
         AvatarService
-      ]
-    })
+    ]
+})
     .compileComponents();
   });
 

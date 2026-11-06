@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Rule } from '../models/rule';
 import { SpecialRoll } from '../models/specialRoll';
+import { MatTabGroup, MatTab, MatTabContent } from '@angular/material/tabs';
+import { RuleTableComponent } from '../rule-table/rule-table.component';
+import { MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatExpansionPanelDescription } from '@angular/material/expansion';
 
 @Component({
     selector: 'app-rules',
     templateUrl: './rules.component.html',
     styleUrls: ['./rules.component.scss'],
-    standalone: false
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [MatTabGroup, MatTab, MatTabContent, RuleTableComponent, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatExpansionPanelDescription]
 })
 export class RulesComponent {
 

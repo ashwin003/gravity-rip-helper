@@ -14,16 +14,16 @@ describe('EditRacerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [EditRacerComponent, AvatarSelectorComponent],
-      imports: [
+    imports: [
         MatToolbarModule,
-        MatDialogModule
-      ],
-      providers: [
+        MatDialogModule,
+        EditRacerComponent, AvatarSelectorComponent
+    ],
+    providers: [
         { provide: MAT_DIALOG_DATA, useValue: { racer, position } },
         { provide: MatDialogRef, useValue: {} },
-      ],
-    }).compileComponents();
+    ],
+}).compileComponents();
   });
 
   beforeEach(() => {

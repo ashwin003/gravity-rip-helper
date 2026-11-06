@@ -1,35 +1,22 @@
-import {
-  AfterViewInit,
-  Directive,
-  ElementRef,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnInit,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, inject } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Typed } from '../models/typed';
 
-@Directive({
-    selector: '[appTyping]',
-    standalone: false
-})
+@Directive({ selector: '[appTyping]' })
 export class TypingDirective implements OnInit, AfterViewInit, OnChanges {
+  private elRef = inject(ElementRef);
+
   typed: Typed;
 
-  @Input('typeSpeed') typeSpeed: number = 0;
-  @Input('startDelay') startDelay: number = 0;
-  @Input('text') text: any = '';
-  @Output('complete') complete: EventEmitter<null> = new EventEmitter();
+  @Input() typeSpeed: number = 0;
+  @Input() startDelay: number = 0;
+  @Input() text: any = '';
+  @Output() complete: EventEmitter<null> = new EventEmitter();
 
   typingLock: boolean = false;
 
   contentObservable: Observable<string>;
   contentSubscription: Subscription;
-
-  constructor(private elRef: ElementRef) {}
 
   ngOnInit(): void {
     if (!this.text) return;

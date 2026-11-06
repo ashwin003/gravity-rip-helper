@@ -1,13 +1,17 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy, inject } from '@angular/core';
 import { AvatarService } from '../services/avatar.service';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @Component({
     selector: 'app-avatar-selector',
     templateUrl: './avatar-selector.component.html',
     styleUrls: ['./avatar-selector.component.scss'],
-    standalone: false
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [LazyLoadImageModule]
 })
 export class AvatarSelectorComponent {
+  private avatarService = inject(AvatarService);
+
   @Input() selected: string = '';
 
   @Output() avatarSelected: EventEmitter<string> = new EventEmitter<string>();
@@ -32,8 +36,6 @@ export class AvatarSelectorComponent {
     'Audie',
     'Ankha'
   ]);
-
-  constructor(private avatarService: AvatarService) { }
 
   isSelected(avatar: string) {
     return this.selected === avatar;
