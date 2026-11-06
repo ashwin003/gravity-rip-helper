@@ -50,8 +50,9 @@ describe('RacerComponent', () => {
 
   it('should specify the right position', () => {
     const badgeElement = fixture.debugElement.query(By.css('.racer')).attributes;
-    
-    expect(badgeElement['ng-reflect-content']).toBe(position.toString());
+    const badgeContent = fixture.debugElement.query(By.css('.mat-badge-content')).nativeElement;
+
+    expect(badgeContent.textContent.trim()).toBe(position.toString());
     expect(badgeElement['matBadgeColor']).toBe('accent');
     expect(badgeElement['matBadgePosition']).toBe('before');
   });
