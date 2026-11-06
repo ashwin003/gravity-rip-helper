@@ -65,14 +65,14 @@ describe('RaceComponent', () => {
 
   it('should re-render a racer after the edit dialog is confirmed', () => {
     const racer = component.racers[0];
-    const edited = { ...racer, avatar: 'assets/edited.png' };
+    const edited = { ...racer, avatar: 'assets/cry.png' };
     component.dialog = { open: () => ({ afterClosed: () => of(edited) }) } as unknown as MatDialog;
 
     component.editTriggered(racer);
     fixture.detectChanges();
 
     const avatar = fixture.debugElement.query(By.directive(AvatarComponent)).componentInstance as AvatarComponent;
-    expect(avatar.src).toBe('assets/edited.png');
+    expect(avatar.src).toBe('assets/cry.png');
     expect(racer.avatar).toBe('');
   });
 

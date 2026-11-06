@@ -12,7 +12,7 @@ module.exports = defineConfig([
     processor: angular.processInlineTemplates,
     languageOptions: {
       parserOptions: {
-        project: ["tsconfig.json", "e2e/tsconfig.json"],
+        project: ["tsconfig.json"],
       },
     },
     rules: {
