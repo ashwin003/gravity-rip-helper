@@ -77,12 +77,12 @@ describe('RuleTableComponent', () => {
   });
 
   it('should display the right rows', () => {
-    const rows = fixture.debugElement.queryAll(By.css('tr.mat-row'));
+    const rows = fixture.debugElement.queryAll(By.css('tr.mat-mdc-row'));
     expect(rows.length).toBe(rules.length);
   });
 
   it('should display the rules correctly', () => {
-    const rows = fixture.debugElement.queryAll(By.css('tr.mat-row'));
+    const rows = fixture.debugElement.queryAll(By.css('tr.mat-mdc-row'));
 
     for(let index = 0; index < rows.length; index++) {
       const row = rows[index];
