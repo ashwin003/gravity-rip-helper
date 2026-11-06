@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { generateAvatar, BackgroundSets, CharacterSets } from 'robohash-avatars'
 
 @Injectable({
   providedIn: 'root'
@@ -37,33 +36,17 @@ export class AvatarService {
     return 'https://api.dicebear.com/9.x/' + sprite + '/' + 'svg?width=' + width + '&height=' + height + '&seed=' + encodeURIComponent(name);
   }
 
+  // RoboHash API: https://robohash.org
+  // set1 = robots, set2 = monsters, set3 = disembodied heads, set4 = kittens, set5 = humans
+  // bg1 / bg2 = background sets
   private generateRobohashAvatarUri(name: string, width: number, height: number): string {
-    const availableBackgroundSets = [
-      BackgroundSets.RandomBackground1,
-      BackgroundSets.RandomBackground2
-    ];
-
-    const availableCharacterSets = [
-      CharacterSets.DisembodiedHeads,
-      CharacterSets.Humans,
-      CharacterSets.Monsters,
-      CharacterSets.Kittens,
-      CharacterSets.Robots
-    ];
+    const availableBackgroundSets = ['bg1', 'bg2'];
+    const availableCharacterSets = ['set1', 'set2', 'set3', 'set4', 'set5'];
 
     const background = this.pickRandom(availableBackgroundSets);
-
     const character = this.pickRandom(availableCharacterSets);
 
-    return generateAvatar(
-      {
-        username: encodeURIComponent(name),
-        background: background,
-        characters: character,
-        width: width,
-        height: height,
-      }
-    );
+    return 'https://robohash.org/' + encodeURIComponent(name) + '?set=' + character + '&bgset=' + background + '&size=' + width + 'x' + height;
   }
 
   private pickRandom<T>(array: T[] ): T {
